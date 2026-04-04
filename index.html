@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会計ファイナンス人材白書 2026 | CPAエクセレントパートナーズ株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'Inter', 'sans-serif'],
+        inter: ['Inter', 'Noto Sans JP', 'sans-serif'],
+      },
+      colors: {
+        primary: '#0f172a',
+        accent: '#0284c7',
+        danger: '#dc2626',
+        muted: '#64748b',
+        light: '#f8fafc',
+      }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+.font-inter { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+.chart-box { width: 100%; min-height: 360px; }
+.chart-box-sm { width: 100%; min-height: 300px; }
+.chart-box-lg { width: 100%; min-height: 420px; }
+.chart-box-xl { width: 100%; min-height: 480px; }
+
+/* Sticky nav */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.top-nav a {
+  transition: color 0.15s;
+}
+.top-nav a:hover {
+  color: #0284c7;
+}
+
+/* Flow diagram */
+.flow-arrow-down {
+  width: 1px;
+  height: 32px;
+  background: currentColor;
+  position: relative;
+  margin: 0 auto;
+}
+.flow-arrow-down::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+}
+
+/* Pull quote */
+.pull-quote {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+.pull-quote .w-divider {
+  width: 3rem;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Section divider */
+.section-divider {
+  border: 0;
+  height: 1px;
+  margin: 3rem 0;
+}
+
+/* Narrative block */
+.narrative {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Callout */
+.callout {
+  border-left-width: 2px;
+  padding: 1.25rem 1.5rem;
+}
+
+@media print {
+  .top-nav { display: none !important; }
+  .cover-section { min-height: auto !important; padding-top: 120px !important; padding-bottom: 120px !important; page-break-after: always; }
+  section { page-break-inside: avoid; }
+  .chart-box, .chart-box-sm, .chart-box-lg, .chart-box-xl { min-height: 300px !important; }
+}
+
+@media (max-width: 768px) {
+  .chart-box { min-height: 300px; }
+  .chart-box-lg { min-height: 360px; }
+  .chart-box-xl { min-height: 400px; }
+  .top-nav-links { display: none; }
+  .mobile-menu-btn { display: flex !important; }
+}
+</style>
+</head>
+<body class="bg-white text-slate-800">
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav bg-white/90 border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-12">
+    <a href="#cover" class="text-xs font-semibold tracking-wide text-primary uppercase">AF White Paper 2026</a>
+    <div class="top-nav-links hidden md:flex items-center gap-6 text-xs text-muted">
+      <a href="#executive-summary">Summary</a>
+      <a href="#ch1">01</a>
+      <a href="#ch2">02</a>
+      <a href="#ch3">03</a>
+      <a href="#ch4">04</a>
+      <a href="#ch5">05</a>
+      <a href="#ch6">06</a>
+      <a href="#ch7">07</a>
+      <a href="#appendix">Appendix</a>
+    </div>
+    <button class="mobile-menu-btn hidden items-center justify-center w-8 h-8" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-3 text-xs text-muted space-y-2">
+    <a href="#executive-summary" class="block">Executive Summary</a>
+    <a href="#ch1" class="block">01 調査概要</a>
+    <a href="#ch2" class="block">02 満足度とビジョンと職場環境</a>
+    <a href="#ch3" class="block">03 やりがいと安定のパラドックス</a>
+    <a href="#ch4" class="block">04 転職の実態</a>
+    <a href="#ch5" class="block">05 リスクと成長</a>
+    <a href="#ch6" class="block">06 AI時代と企業格差</a>
+    <a href="#ch7" class="block">07 提言</a>
+    <a href="#appendix" class="block">Appendix</a>
+  </div>
+</nav>
+
+<!-- ===== COVER ===== -->
+<section id="cover" class="cover-section min-h-screen flex flex-col justify-center items-center bg-primary text-white px-6 py-24 relative">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-0 right-0 w-1/2 h-full" style="background: radial-gradient(ellipse at 70% 30%, rgba(2,132,199,0.08) 0%, transparent 60%);"></div>
+  </div>
+  <div class="relative text-center max-w-3xl mx-auto">
+    <p class="font-inter text-xs tracking-[0.25em] text-slate-400 mb-12 uppercase">Research Report 2026</p>
+    <p class="font-inter text-sm tracking-[0.15em] text-slate-400 mb-4">Accounting &amp; Finance Human Capital White Paper</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-8">会計ファイナンス<br>人材白書 2026</h1>
+    <p class="text-lg sm:text-xl font-light text-slate-300 tracking-wide mb-16">「知らないことと、動かないことが、キャリアを止める。」</p>
+    <div class="w-12 h-px bg-slate-600 mx-auto mb-16"></div>
+    <div class="space-y-3 text-sm text-slate-400">
+      <p>経理財務人材 <span class="font-inter font-bold text-white text-2xl">341</span> 名への定量調査に基づく</p>
+      <p>2026年7月 発行</p>
+      <p class="font-medium text-slate-300">CPAエクセレントパートナーズ株式会社</p>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-accent"></div>
+</section>
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<section id="executive-summary" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-xs tracking-[0.2em] text-muted uppercase mb-3">Executive Summary</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-primary leading-snug mb-4">エグゼクティブサマリー</h2>
+    <p class="text-muted mb-16">341名の調査データが示す、経理人材の4つの構造的課題</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <!-- Card 1 -->
+      <div class="border-t-2 border-accent pt-6">
+        <p class="font-inter text-5xl font-black text-primary leading-none">15<span class="text-2xl">x</span></p>
+        <p class="text-xs text-muted mt-2 mb-3 font-inter">50.7% vs 3.4%</p>
+        <p class="text-sm font-semibold text-primary leading-relaxed mb-2">ビジョンの有無が満足度に15倍の格差を生む</p>
+        <p class="text-xs text-muted leading-relaxed">キャリアビジョンが明確な人の50.7%が仕事に満足しているのに対し、ビジョンのない人ではわずか3.4%。ビジョンの有無は「気持ち」の問題ではなく、構造的な差を生む最大因子のひとつである。</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="border-t-2 border-danger pt-6">
+        <p class="font-inter text-5xl font-black text-danger leading-none">44<span class="text-2xl">pt</span></p>
+        <p class="text-xs text-muted mt-2 mb-3 font-inter">支援あり 44.0% vs 支援なし 0.0%</p>
+        <p class="text-sm font-semibold text-primary leading-relaxed mb-2">職場環境が「運命」を決める -- 全変数中で最大の格差</p>
+        <p class="text-xs text-muted leading-relaxed">学習支援の有無がビジョン明確率に44ポイントの差を生む。支援なし環境ではビジョン明確率・スキル成長実感・社外通用自信の全てが0.0%という衝撃的結果となった。</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="border-t-2 border-primary pt-6">
+        <p class="font-inter text-5xl font-black text-primary leading-none">2.9<span class="text-2xl">%</span></p>
+        <p class="text-xs text-muted mt-2 mb-3 font-inter">自ら選んだ人の13分の1</p>
+        <p class="text-sm font-semibold text-primary leading-relaxed mb-2">「望まない異動」がキャリアに長い影を落とす</p>
+        <p class="text-xs text-muted leading-relaxed">望まない配属で経理に来た人のビジョン明確率はわずか2.9%。自ら希望した人の39.4%と比較して13倍の格差がある。3人に1人がこの状態に置かれている。</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="border-t-2 border-slate-400 pt-6">
+        <p class="font-inter text-5xl font-black text-primary leading-none">0<span class="text-2xl">%</span></p>
+        <p class="text-xs text-muted mt-2 mb-3 font-inter">リスク完全回避層の満足度</p>
+        <p class="text-sm font-semibold text-primary leading-relaxed mb-2">「安定」を求めるほどキャリアは不安定になる</p>
+        <p class="text-xs text-muted leading-relaxed">リスクを完全回避する経理パーソンで「仕事に満足」と答えた人は0%。安定志向型は不満率・行動ゼロ率・通用スキルなし率の全てで最も不利な位置にある。</p>
+      </div>
+    </div>
+
+    <div class="callout border-accent bg-light">
+      <p class="text-sm leading-relaxed text-slate-700">本白書では、この4つの発見を起点に、経理財務人材341名のデータから「なぜキャリアが止まるのか」「どうすれば動き出せるのか」を7章にわたって解き明かす。職場環境、キャリアビジョン、スキル成長実感という3つの構造変数が、個人のキャリアをどのように規定し、どこから介入すればその軌道を変えられるのかを、データに基づいて示していく。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 1 ===== -->
+<section id="ch1" class="bg-light py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-slate-100 leading-none select-none">01</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">調査概要と回答者プロフィール</h2>
+    <p class="text-muted mb-12">n=341 -- 経理財務人材のリアルな姿</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">本調査は、2026年3月~4月にかけて、ノウンズ株式会社を通じて実施したWebアンケート調査である。経理財務業務の経験がある20代~60代のビジネスパーソン341名から有効回答を得た。</p>
+    </div>
+
+    <!-- Gender -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">回答者の性別構成</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-gender" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Age -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">年代別分布</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-age" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Income -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">年収分布</h3>
+      <p class="text-xs text-muted mb-4">n=341 -- ボリュームゾーンは400-500万円</p>
+      <div id="chart-income" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Company Type -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">所属企業タイプ（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-company" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- How Started -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">経理を始めたきっかけ</h3>
+      <p class="text-xs text-muted mb-4">n=341 -- 約4割が「望まない配属」からキャリアを開始</p>
+      <div id="chart-started" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="callout border-amber-500 bg-amber-50">
+      <p class="text-[10px] font-bold tracking-wider text-amber-700 uppercase mb-2">Key Finding</p>
+      <p class="text-sm leading-relaxed text-slate-700">回答者の36.6%が「望まない配属・異動」で経理キャリアを開始している。この入口の動機が、その後のキャリアビジョン形成に大きな影響を与えていることが、第2章以降の分析で明らかになる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 2 ===== -->
+<section id="ch2" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-slate-100 leading-none select-none">02</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">満足度とキャリアビジョン、そして職場環境</h2>
+    <p class="text-muted mb-12">構造が個人の運命を決める</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">経理人材の71.2%が現在の仕事に満足している一方、34.3%がキャリアの将来像を描けていない。「今は良い、でも先が見えない」――この矛盾が、経理人材の構造的課題の核心にある。そしてその背後には、個人の努力では超えられない「職場環境」という巨大な規定要因が潜んでいる。</p>
+    </div>
+
+    <!-- Job Satisfaction + Career Vision side by side -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">現在の仕事への満足度 / キャリアビジョンの明確度</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-satisfaction-vision" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Cross-tab: Vision x Satisfaction -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">キャリアビジョン x 仕事満足度 クロス分析</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-vision-satisfaction-heatmap" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Pull quote: 15x -->
+    <div class="pull-quote mb-12">
+      <div class="w-divider bg-accent"></div>
+      <p class="text-xl sm:text-2xl font-bold text-primary leading-relaxed">ビジョンが明確な人の満足度50.7%に対し、全くない人はわずか3.4%。<br>その差、実に15倍。</p>
+      <p class="text-xs text-muted mt-3">キャリアビジョン x 満足度 クロス集計より（n=341）</p>
+    </div>
+
+    <!-- Insight 10 Narrative -->
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">この格差は、職場環境の影響に次いで本調査で2番目に大きい相関であり、キャリアビジョンの有無が仕事の満足度をほぼ決定づけると言って差し支えない。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">そのメカニズムは、目的意識から能動的関与、成果実感、そして満足感へと至る心理的連鎖で説明できる。ビジョンがある人は、日々の業務を「ゴールへの過程」として意味づけられるため、同じ仕事をしていても主観的な体験が根本的に異なる。ルーティンワークさえも「スキル蓄積の機会」として再解釈される。</p>
+      <p class="text-base leading-loose text-slate-600">しかし、「ビジョンを持て」と言われて持てるなら、誰も苦労しない。本データが本当に示唆しているのは、ビジョンとは「最初から持っているもの」ではなく、「探索の中で徐々に形成されるもの」だということだ。行動し、経験し、内省するプロセスの中でビジョンは輪郭を帯びてくる。</p>
+    </div>
+
+    <div class="callout border-amber-500 bg-amber-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-amber-600 uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">「ビジョンがない」ことを嘆くのではなく、「ビジョンを探すための最初の一歩」を踏み出すこと。資格学習でも、社外セミナーへの参加でも、異業種の人との対話でも構わない。その一歩が、15倍の満足度格差を埋める起点となる。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Reasons for Unclear Vision -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">ビジョンが描けない理由</h3>
+      <p class="text-xs text-muted mb-6">n=117（ビジョンが「あまりない」「全くない」と回答した人）</p>
+      <div id="chart-vision-reasons" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=117）</p>
+    </div>
+
+    <!-- 3 Layers -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">ビジョン不在の3層構造</h3>
+      <div class="narrative">
+        <p class="text-sm text-slate-600 leading-relaxed mb-8">ビジョンが描けない理由を分析すると、3つの層が浮かび上がる。表層的な「忙しさ」の裏に、より根本的な「出口が見えない」問題が潜んでいる。</p>
+      </div>
+
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <div class="flex items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-danger text-white font-inter font-black text-lg shrink-0">1</div>
+          <div class="flex-1 flex items-center justify-between bg-red-50 px-5 py-3">
+            <span class="text-sm font-semibold text-slate-800">出口認知なし -- 「何がしたいかわからない」</span>
+            <span class="font-inter font-black text-danger text-lg">37.6%</span>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-amber-500 text-white font-inter font-black text-lg shrink-0">2</div>
+          <div class="flex-1 flex items-center justify-between bg-amber-50 px-5 py-3">
+            <span class="text-sm font-semibold text-slate-800">プロセス不明 -- 「情報が足りない」</span>
+            <span class="font-inter font-black text-amber-600 text-lg">25.6%</span>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-12 h-12 flex items-center justify-center bg-accent text-white font-inter font-black text-lg shrink-0">3</div>
+          <div class="flex-1 flex items-center justify-between bg-sky-50 px-5 py-3">
+            <span class="text-sm font-semibold text-slate-800">余裕なし -- 「忙しくて考えられない」</span>
+            <span class="font-inter font-black text-accent text-lg">34.2%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-4 mb-12">
+      <div class="flex gap-4 bg-light p-5">
+        <div class="w-1 bg-accent shrink-0"></div>
+        <div>
+          <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-1">Fact</p>
+          <p class="text-sm leading-relaxed text-slate-700">最大の理由は「何がしたいかわからない」（37.6%）。忙しさ（34.2%）以上に、そもそもキャリアの選択肢を知らないことが問題である。（n=117）</p>
+        </div>
+      </div>
+      <div class="flex gap-4 bg-light p-5">
+        <div class="w-1 bg-amber-500 shrink-0"></div>
+        <div>
+          <p class="text-[10px] font-bold tracking-wider text-amber-600 uppercase mb-1">So What</p>
+          <p class="text-sm leading-relaxed text-slate-700">「考える時間がない」のではなく、「考えるための材料がない」。キャリアの出口情報に触れる機会の不足が、根本的なボトルネックになっている。</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Insight 7: たまたま経理 -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-danger">「たまたま経理」の危機 -- 3人に1人が望まずにこの仕事をしている</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-started-vision" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">調査回答者の36.6%が「望まない配属」によって経理職に就いている（n=341）。そして、望まない異動で経理に配属された人のビジョン明確率はわずか2.9%（n=125）。自ら希望して経理に就いた人の39.4%（n=196）と比較すると、実に13倍以上の格差がある。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">この発見は、日本企業の「ジョブローテーション」文化の功罪を端的に示している。50代の33.3%が会社辞令で経理に配属されている事実は、「本人の意志と無関係に職種が決まる」慣行が、キャリアの当事者意識（オーナーシップ）を構造的に希薄化させていることを意味する。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">「たまたま経理」の人々に共通するのは、キャリアの「選択」を経験していないという点だ。自ら選んでいないがゆえに、「なぜこの仕事をしているのか」という問いに答えられない。目的意識の欠如は、学習動機の欠如につながり、スキル停滞につながり、やがて「通用スキルがない」という自己認識に至る。</p>
+    </div>
+
+    <div class="callout border-emerald-600 bg-emerald-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-emerald-700 uppercase mb-2">Hope</p>
+      <p class="text-sm leading-relaxed text-slate-700">重要なのは「最初にどう配属されたか」ではなく、「いま、この仕事を自分のものとして引き受け直せるかどうか」である。「たまたま始めた仕事」を「自ら選び直す」――この心理的な再選択が、キャリアの転換点となり得る。組織としても、望まない配属を受けた人材に対して、経理の仕事の意義や将来性を伝え、キャリアパスを可視化する責任がある。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Insight 1: 職場環境が運命を決める -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-danger">職場環境が「運命」を決める -- 個人の努力では超えられない構造の壁</h3>
+      <p class="text-xs text-muted mb-6">学習支援環境別比較（n=341）</p>
+    </div>
+
+    <!-- Pull quote: 44pt gap -->
+    <div class="pull-quote mb-8">
+      <div class="w-divider bg-danger"></div>
+      <p class="text-2xl sm:text-3xl font-black text-danger leading-snug">学習支援なし環境での<br>ビジョン明確率・スキル成長実感・社外通用自信<br>全て<span class="font-inter">0.0%</span></p>
+      <p class="text-xs text-muted mt-3">本調査における全変数中で最大の格差（44~47pt差）</p>
+    </div>
+
+    <!-- Workplace Environment Grouped Bar Chart -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">学習支援環境別 4指標の比較</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-workplace-env" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">本調査で最も衝撃的な発見は、学習支援の有無がキャリア指標のほぼすべてを決定づけているという事実である。学習支援がある職場では、キャリアビジョンが明確な人が44.0%、スキル成長実感は46.6%、社内外で通用する自信を持つ人は38.8%に達する。一方、学習支援がない職場では、これらすべてが0.0%――文字通りゼロである。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">この44~47ポイントの格差は、本調査における全変数中で最大である。性別よりも、年齢よりも、企業規模よりも、「職場が学習を支援しているか否か」が個人のキャリア形成を左右する。これは個人の意志や能力の問題ではなく、構造の問題だ。</p>
+      <p class="text-base leading-loose text-slate-600">さらに注目すべきは、「推奨・支援なし」の職場では64.7%が「やりがいを感じていない」と回答している点だ。支援の欠如は、スキルだけでなく、仕事への意味づけそのものを奪う。</p>
+    </div>
+
+    <!-- 70.6% callout -->
+    <div class="pull-quote mb-8">
+      <div class="w-divider bg-slate-900"></div>
+      <p class="font-inter text-6xl font-black text-primary leading-none">70.6<span class="text-2xl">%</span></p>
+      <p class="text-base font-semibold text-slate-700 mt-4">学習支援なし環境の人材が<br>「過去3年間、何も行動していない」と回答</p>
+      <p class="text-xs text-muted mt-2">n=341</p>
+    </div>
+
+    <div class="callout border-danger bg-red-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-danger uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">企業にとっての示唆は明白である。学習支援制度は「福利厚生」ではなく「人的資本投資のインフラ」であり、その有無が人材の市場価値を構造的に決定する。支援のない環境に置かれた個人にとっては、社外コミュニティへの参加、自主的な資格取得、副業・兼業による経験拡張など、「環境の外に成長の場を自ら構築する」ことが、この構造を打破する唯一の手段となる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 3 ===== -->
+<section id="ch3" class="bg-light py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-white leading-none select-none">03</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">やりがいの2タイプと安定のパラドックス</h2>
+    <p class="text-muted mb-12">「守り」と「攻め」、そして安定という名のリスク</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">経理パーソンのやりがいは、「正確さ」を追求する守りのタイプと、「意思決定支援」や「業務改善」に喜びを見出す攻めのタイプに二分される。どちらが良い悪いではないが、キャリアの広がりには明確な差が生まれる。</p>
+    </div>
+
+    <!-- Job Satisfaction Factors -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">仕事のやりがい・満足要因（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-joy-factors" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Work Stance -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">仕事への姿勢・スタンス（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-stance" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="callout border-accent bg-white mb-12">
+      <p class="text-sm leading-relaxed text-slate-700">「改善・効率」（44.3%）と「習熟・安定」（43.4%）がほぼ拮抗。経理人材のスタンスは「攻め」と「守り」で二極化している。（n=341）</p>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- Insight 4: 安定のパラドックス -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-danger">安定のパラドックス -- 「安定志向」が最も不安定な結果を生む</h3>
+    </div>
+
+    <!-- Stance x Outcomes chart -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">キャリア志向タイプ別 -- 主要指標の比較</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-stance-outcomes" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">キャリア志向を4類型に分けた分析で、最も皮肉な結果を示したのが「習熟・安定型」である。安定を志向するこのグループは、不満率11.5%、行動ゼロ率15.5%、「通用スキルなし」23.0%、ビジョン不明確10.8%と、すべての指標で最も不利な位置にある（n=148）。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">対照的に、「創造・開拓型」は不満率4.0%、行動ゼロ率3.4%、通用スキルなし3.9%（n=101）。「柔軟・適応型」も行動ゼロ率3.4%と低い（n=118）。「専門・追求型」はビジョン明確率36.3%と最高値を記録し、通用スキルなし率もわずか3.9%にとどまる（n=102）。</p>
+      <p class="text-base leading-loose text-slate-600">安定を求める人が最も不安定な結果に至る――このパラドックスのメカニズムは明確だ。安定志向は「現状維持」を最適解とみなすため、環境変化への適応投資を怠る。今日の安定は明日の陳腐化を意味し、気づいた時には市場価値が毀損されている。</p>
+    </div>
+
+    <!-- Pull quote: paradox -->
+    <div class="pull-quote mb-12">
+      <div class="w-divider bg-danger"></div>
+      <p class="text-xl sm:text-2xl font-bold text-danger leading-relaxed">安定を求める人が、最も不安定。</p>
+      <p class="text-base text-slate-600 mt-4 max-w-xl mx-auto leading-relaxed">真の安定は、変化に適応し続ける力――すなわち「動的安定」――の中にしか存在しない。</p>
+    </div>
+
+    <div class="callout border-amber-500 bg-amber-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-amber-600 uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">重要なのは、「安定」そのものが悪いわけではないということだ。問題は、「安定を守るために変化を拒む」という姿勢にある。キャロル・ドゥエックの「固定マインドセット」と「成長マインドセット」の研究が示すように、能力を固定的に捉える人は挑戦を避け、結果として成長が停滞する。本調査のデータはこの理論を実証的に裏付けている。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- Self-Evaluation + Gender Gap -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">自己評価 -- 社内と社外の自信格差</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-self-eval" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="callout border-amber-500 bg-amber-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-amber-700 uppercase mb-2">Key Finding</p>
+      <p class="text-sm leading-relaxed text-slate-700">最大ボリュームゾーンは「社内では評価されているが、外に出たら通用するか不安」（43.1%、n=147）。社内スキルの外部転用可能性への不安が、キャリアビジョンの不明確さに直結している。</p>
+    </div>
+
+    <!-- Self-Evaluation x Career Vision -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">自己評価 x キャリアビジョン明確度</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-selfeval-vision" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Insight 8: Gender Gap narrative -->
+    <div class="narrative mb-12">
+      <h4 class="text-base font-bold text-primary mb-4">ジェンダーギャップ -- 見えにくいが確実に存在する壁</h4>
+      <p class="text-base leading-loose text-slate-600 mb-6">年収面では、女性の31.0%が300万円未満であるのに対し、男性は13.2%。600万円以上は女性10.0%に対し男性33.2%。約3倍の格差だ（n=341、男性244名、女性97名）。自己評価においても、女性の49.0%が「社内では自信があるが社外では不安」と回答（男性40.7%）し、「通用スキルなし」と感じる割合は女性28.0%対男性11.6%と2.4倍の差がある。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">注目すべきは、リスク許容度の差が「予想より小さい」という点だ。女性の38.0%対男性の29.0%がリスク回避的だが、その差は9ポイントにとどまる。年収やスキル自信の格差（17~20ポイント）と比較すると、リスクへの姿勢そのものの差は限定的である。つまり、女性が挑戦しないのは「リスクを嫌うから」ではなく、「成功の見通しが立たないから」である可能性が高い。</p>
+    </div>
+
+    <div class="callout border-accent bg-sky-50">
+      <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">低い自信から低いリスク許容、そして低い年収という「自己実現的予言」の連鎖が、女性においてより強く作用している。この循環を断つには、構造的な要因（評価制度、昇進機会、ロールモデルの可視化）と個人的な要因（スキルの棚卸し、社外ネットワーク構築）の両面からのアプローチが必要である。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 4 ===== -->
+<section id="ch4" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-slate-100 leading-none select-none">04</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">転職の実態</h2>
+    <p class="text-muted mb-12">何を求め、何を得たか</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">経理人材の85.6%が少なくとも1回の転職を経験している（n=341）。転職は「年収」を求めて行われるが、実際に得られるものは「働き方」や「職場文化」の改善であることが多い。そして、転職の最適回数は2~3回であることがデータから浮かび上がる。</p>
+    </div>
+
+    <!-- Job Change Count -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">転職回数の分布</h3>
+      <p class="text-xs text-muted mb-4">n=341 -- 85.6%が転職経験あり</p>
+      <div id="chart-job-changes" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Reasons + Gains side by side -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">転職理由 vs 実際に得られたもの（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=292（転職経験者）</p>
+      <div id="chart-reasons-gains" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=292）</p>
+    </div>
+
+    <div class="callout border-emerald-600 bg-emerald-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-emerald-700 uppercase mb-2">Insight</p>
+      <p class="text-sm leading-relaxed text-slate-700">転職の動機は「年収」（40.8%）が最多だが、実際に得られた満足は「柔軟な働き方」（34.9%）や「職場文化」（28.4%）など非金銭的な要素が上位に食い込む。転職は年収以上の価値をもたらしている。（n=292）</p>
+    </div>
+
+    <!-- Cross-tab: Job changes x Income -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">転職回数と年収の関係</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-changes-income" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Pull quote: sweet spot -->
+    <div class="pull-quote mb-12">
+      <div class="w-divider bg-accent"></div>
+      <p class="text-xl sm:text-2xl font-bold text-primary leading-relaxed">転職の最適回数は「2~3回」。<br>それを超えると年収へのリターンは逓減し、5回以上では低年収層に集中する。</p>
+      <p class="text-xs text-muted mt-3">転職回数 x 年収 クロス集計より（n=341）</p>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Insight 9: 子育てとリスク -->
+    <div class="narrative mb-12">
+      <h4 class="text-base font-bold text-primary mb-4">子育てとリスク -- 意外と小さい差、そして「計算されたリスク」の発見</h4>
+      <p class="text-base leading-loose text-slate-600 mb-6">「子供がいるとキャリアチェンジできない」――この通念は、本調査のデータによって部分的に覆される。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">確かに、大きなリスクを取れる割合は子あり8.8%対子なし15.5%と差がある。しかし、適度なリスクを受容する割合は子あり55.1%対子なし47.4%と、むしろ子ありの方が高い（n=341、子あり147名、子なし194名）。子供のいる回答者は、無謀なリスクは避けるが、計算されたリスクにはむしろ積極的なのだ。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">さらに年収を見ると、子あり層の25.2%が年収700万円以上であるのに対し、子なし層は8.8%。子供がいる人の方が高収入帯に多い。これは年齢効果を含むにせよ、「子育てがキャリアの足かせになる」という単純な図式が成立しないことを示している。</p>
+    </div>
+
+    <div class="callout border-accent bg-sky-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">子育ては「リスク回避」ではなく「リスクの質的変換」をもたらす。守るべきものがあるからこそ、闇雲な冒険はしない。しかし同時に、守るべきものがあるからこそ、確実性の高い成長投資には積極的になる。「子供がいるから動けない」という語りは、データ上は自己制限的な信念に近い。「動けない」のではなく「動き方が変わる」のだと捉え直すことで、多くのキャリア戦略が開かれるはずだ。</p>
+    </div>
+
+    <div class="flex gap-4 bg-light p-5">
+      <div class="w-1 bg-emerald-600 shrink-0"></div>
+      <div>
+        <p class="text-[10px] font-bold tracking-wider text-emerald-600 uppercase mb-1">Action</p>
+        <p class="text-sm leading-relaxed text-slate-700">転職は「目的意識を持った戦略的な移動」であるべき。回数を重ねること自体に価値はなく、各転職で何を得るかを明確にした上でのキャリア設計が重要である。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 5 ===== -->
+<section id="ch5" class="bg-light py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-white leading-none select-none">05</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">リスクと成長 -- スキル成長実感というマスター変数</h2>
+    <p class="text-muted mb-12">すべてを動かす「起点」</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">「安定を求めて経理を選んだ」という人は少なくない。しかし、データは逆説的な真実を示す。リスクを完全に避ける人の仕事満足度は0%――安定志向こそが、最大のキャリアリスクである。そして本調査のあらゆるクロス分析を通じて、最も広範かつ強力な影響力を持つ変数が「スキル成長実感」であることが明らかになった。</p>
+    </div>
+
+    <!-- Risk Tolerance - Polar -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">キャリアにおけるリスク許容度</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-risk-tolerance" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Perceived Risks -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">キャリア変更時に感じるリスク（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-perceived-risks" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Skill Growth -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">過去3年間のスキル成長実感</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-skill-growth" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Risk x Satisfaction -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">リスク許容度 x 仕事満足度</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-risk-satisfaction" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="callout border-danger bg-red-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-danger uppercase mb-2">Critical Finding</p>
+      <p class="text-sm leading-relaxed text-slate-700">「リスクを絶対に回避する」層で「仕事に満足」と答えた人は0%（n=17）。安定を最優先にするほど、逆説的に満足度が下がる。一方、リスクを積極的に許容する層の満足度は44.2%と突出して高い（n=43）。</p>
+    </div>
+
+    <!-- Risk x Career Vision -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">リスク許容度別 -- キャリアビジョン明確度</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-risk-vision" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="pull-quote mb-12">
+      <div class="w-divider bg-danger"></div>
+      <p class="text-xl sm:text-2xl font-bold text-primary leading-relaxed">リスクを絶対に回避する層の55.2%が「キャリアビジョンが全くない」。<br>変化を避けることは、未来を見失うことに等しい。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- CENTERPIECE: Insight 5 - Skill Growth as Master Variable -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">スキル成長実感 = マスター変数 -- すべてを動かす「起点」</h3>
+      <p class="text-xs text-muted mb-6">成長実感レベル別 主要指標比較（n=341）</p>
+    </div>
+
+    <!-- Skill Growth x Everything Dashboard -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-sm font-semibold text-primary mb-1">成長実感 x ビジョン明確率</h4>
+          <div id="chart-growth-vision" class="chart-box-sm"></div>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-primary mb-1">成長実感 x リスク許容度（積極的）</h4>
+          <div id="chart-growth-risk" class="chart-box-sm"></div>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-primary mb-1">成長実感 x 仕事満足度</h4>
+          <div id="chart-growth-satisfaction" class="chart-box-sm"></div>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-primary mb-1">成長実感 x 行動ゼロ率</h4>
+          <div id="chart-growth-action" class="chart-box-sm"></div>
+        </div>
+      </div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">成長実感が「とてもある」と回答した層（n=78）は、ビジョン明確率65.4%、リスク許容度（積極的）37.2%、満足度44.9%、行動ゼロ率0.0%。一方、「まったくない」層（n=15）は、ビジョン明確率6.7%、リスク許容度1.6%、満足度4.8%、行動ゼロ率40.0%である。「やや」「あまり」の中間層も明確な勾配を描き、段階的に数値が悪化する。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">注目すべきは、成長実感が「とてもある」層で行動ゼロ率が0.0%という点だ。成長を実感している人は、例外なく何らかの行動を起こしている。これはスキル成長実感が「フライホイール（弾み車）」として機能していることを示唆する。成長を感じる、自信がつく、行動する、さらに成長する、ビジョンが明確になる、リスクを取れる――この正の循環が回り始めると、キャリアのあらゆる指標が連動して改善する。</p>
+    </div>
+
+    <!-- Pull quote: flywheel -->
+    <div class="pull-quote mb-12">
+      <div class="w-divider bg-accent"></div>
+      <p class="text-xl sm:text-2xl font-bold text-primary leading-relaxed">成長実感が全てを動かすフライホイール</p>
+      <p class="text-base text-slate-600 mt-4 max-w-xl mx-auto leading-relaxed">小さな学習、小さな挑戦、小さな成功――その規模は問わない。成長の実感さえ生まれれば、フライホイールは回り始める。逆に、成長実感がまったくない「成長の砂漠」に置かれた人材は、すべての指標が同時に悪化する負のスパイラルに陥る。</p>
+    </div>
+
+    <div class="callout border-accent bg-sky-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">因果の方向性には留意が必要だ。成長実感が自信を生むのか、自信が成長実感を高めるのか。おそらく双方向だが、実務的に重要なのは「どこからでも回し始められる」という点である。成長の砂漠からの脱出は、外部からの支援なしには極めて困難であり、企業の制度設計やコミュニティの存在が鍵となる。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- Insight 2: 年齢の逆説 -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-amber-500">年齢の逆説 -- 経験の蓄積がキャリアの明確さを保証しない</h3>
+      <p class="text-xs text-muted mb-6">年代別 主要キャリア指標（n=341）</p>
+    </div>
+
+    <!-- Age x Key Metrics chart -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div id="chart-age-metrics" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">直感に反するが、データは明確だ。20代のキャリア満足度は30.9%、ビジョン明確率は29.8%、スキル成長実感は30.9%（n=63）。対して50代は、満足度7.9%、ビジョン明確率12.7%、スキル成長実感14.3%（n=76）。60代に至っては、ビジョン明確率もスキル成長実感もともに0.0%（n=12）となる。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">経験年数が長ければキャリアが充実するという素朴な期待は、本データによって明確に否定された。むしろ年齢を重ねるほど、キャリアに対する実感値は低下する――いわば「茹でガエル効果」が静かに進行しているのである。</p>
+      <p class="text-base leading-loose text-slate-600">その構造的な背景を示すデータがある。50代の33.3%は「会社辞令」によって経理に配属されており、自らキャリアを選択したわけではない。さらに50代の28.6%が「社外で通用するスキルがない」と感じている。20代ではこの割合はわずか8.5%だ。一方、20代が自ら会計を選んだ割合は52.1%と最も高い。ただし、20代の52.4%は「ロールモデルがいない」とも回答しており、意欲はあるが道が見えない状態にある。</p>
+    </div>
+
+    <div class="callout border-amber-500 bg-amber-50">
+      <p class="text-[10px] font-bold tracking-wider text-amber-600 uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">「キャリアの意図性」は早期に確立すべきだ。年齢を重ねてから取り戻すことは、不可能ではないが、極めて難しい。20代・30代のうちに「自分のキャリアを自分で選ぶ」という姿勢を獲得できるかどうかが、その後の数十年を分ける分水嶺となる。ここに、コミュニティやメンタリングが果たすべき役割がある。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 6 ===== -->
+<section id="ch6" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-slate-100 leading-none select-none">06</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">AI時代の価値と企業タイプ別格差</h2>
+    <p class="text-muted mb-12">テクノロジーが変えるもの、変えないもの</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">AI・自動化の波は経理業務を根本から変えつつある。しかし、本調査が明らかにしたのは、テクノロジーの活用そのものよりも、経理パーソンが持つ「ポータブルスキル」の価値の高さである。そして、その価値の実現可能性は企業タイプによって大きく異なる。</p>
+    </div>
+
+    <!-- Actions in past 3 years -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">過去3年間に取り組んだ行動（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-actions" class="chart-box-sm"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Transferable Skills - Treemap -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <h3 class="text-sm font-semibold text-primary mb-1">他職種でも活かせるスキル / 経理経験が培う強み（複数回答）</h3>
+      <p class="text-xs text-muted mb-4">n=341</p>
+      <div id="chart-skills-treemap" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <!-- Experience Areas -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">経験業務領域の分布</h3>
+      <p class="text-xs text-muted mb-6">n=341</p>
+      <div id="chart-experience" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="callout border-emerald-600 bg-emerald-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-emerald-700 uppercase mb-2">Key Finding</p>
+      <p class="text-sm leading-relaxed text-slate-700">高度専門領域（連結決算、税務、M&A、IFRS等）の経験者は、年収800万円以上に66~75%が集中する（n=84）。経験の「深さ」だけでなく「幅」が、年収を左右する重要なファクターである。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Insight 3: 兼務の逆説 -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-accent">兼務の逆説 -- 専任より兼務が成長する</h3>
+      <p class="text-xs text-muted mb-6">経理専任 vs 兼務 主要指標比較（n=341）</p>
+    </div>
+
+    <!-- 兼務 vs 専任 Chart -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div id="chart-concurrent-vs-dedicated" class="chart-box"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">「経理に専念できる環境こそ成長に最適」――多くの人がそう考えるだろう。しかしデータは正反対の結論を示す。経理兼務者のスキル成長実感は34.0%、社内外で通用する自信は28.0%、ビジョン明確率は26.0%（n=50）。対して経理専任（主務）者は、スキル成長実感15.1%、社内外自信10.7%、ビジョン明確率17.6%（n=159）。兼務者は専任者の約2倍の成長実感を持っている。</p>
+      <p class="text-base leading-loose text-slate-600">この逆説の背景には、「T字型人材」の原理がある。経理以外の業務――経営企画、事業部門、IR、内部監査など――を兼務することで、会計数値の「意味」を文脈の中で理解できるようになる。仕訳を切る技術だけでなく、「なぜその数字が経営にとって重要か」を語れるようになる。この「視座の拡張」が、自信とビジョンの源泉となっている。</p>
+    </div>
+
+    <div class="callout border-accent bg-sky-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">企業のジョブデザインへの示唆は大きい。経理部門の専門性を高めるために業務を細分化・専任化する方針は、短期的な効率性と引き換えに、長期的な人材の成長と市場価値を犠牲にしている可能性がある。意図的に兼務やローテーションを設計し、「越境経験」を積ませることが、組織の会計機能全体の高度化につながる。</p>
+    </div>
+
+    <hr class="section-divider bg-slate-200">
+
+    <!-- Insight 6: 企業タイプ別格差 -->
+    <div class="max-w-5xl mx-auto pt-4 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-danger">企業タイプ別格差 -- 外資系の「構造的優位」とその本質</h3>
+      <p class="text-xs text-muted mb-6">企業タイプ別 主要指標比較（n=341）</p>
+    </div>
+
+    <!-- 外資 vs 日系 Chart -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div id="chart-company-type-comparison" class="chart-box-lg"></div>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+    </div>
+
+    <div class="narrative mb-12">
+      <p class="text-base leading-loose text-slate-600 mb-6">外資系企業の経理人材は、ビジョン明確率39.7%、管理会計経験58.8%、行動ゼロ率1.5%、通用スキルなし率1.5%と、すべての指標で突出した数値を示す（n=68）。対して日系非上場企業では、ビジョン明確率14.6%、行動ゼロ率15.2%、通用スキルなし率21.9%（n=178）。外資系との間に、ビジョンで約25ポイント、通用スキルで約20ポイントの格差が存在する。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">この「外資系の優位」を生み出しているのは、報酬水準の違いだけではない。本質的な差異は3つの構造的要因にある。第一に、職務範囲の広さ――外資系では管理会計経験率が約6割に達し、制度会計に閉じないジョブスコープが標準である。第二に、パフォーマンス文化――成果が評価に直結するため、自己研鑽のインセンティブが構造的に組み込まれている。第三に、流動性の前提――外資系では転職が「前提」であり、常に市場価値を意識するマインドセットが醸成される。</p>
+    </div>
+
+    <div class="callout border-danger bg-red-50 mb-12">
+      <p class="text-[10px] font-bold tracking-wider text-danger uppercase mb-2">So What?</p>
+      <p class="text-sm leading-relaxed text-slate-700">日系企業、とりわけ非上場企業の経営者が認識すべきは、学習支援制度や越境的な業務経験の不足が、人材の市場価値を構造的に毀損しているという事実である。そしてこの格差は、個人の努力だけでは埋められない。制度設計の問題として取り組む必要がある。日系非上場企業で働く個人に対しては、社外の学習機会を積極的に活用し、「環境が与えてくれないものを自ら獲りに行く」姿勢が不可欠である。</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="flex gap-4 bg-light p-5">
+        <div class="w-1 bg-accent shrink-0"></div>
+        <div>
+          <p class="text-[10px] font-bold tracking-wider text-accent uppercase mb-1">Fact</p>
+          <p class="text-sm leading-relaxed text-slate-700">日常経理のみの経験者が49.0%と最大ボリューム。高度専門領域まで経験している人は24.6%にとどまる。（n=341）</p>
+        </div>
+      </div>
+      <div class="flex gap-4 bg-light p-5">
+        <div class="w-1 bg-emerald-600 shrink-0"></div>
+        <div>
+          <p class="text-[10px] font-bold tracking-wider text-emerald-600 uppercase mb-1">Action</p>
+          <p class="text-sm leading-relaxed text-slate-700">AI時代に経理パーソンの価値を高めるのは、ルーティン業務の習熟ではなく、ビジネス全体を俯瞰できる経験の幅と、それに基づく分析・提言力である。「制度会計プレミアム」を認識し、日常経理から管理会計・高度専門領域へと意識的にキャリアの幅を広げていくことが鍵となる。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 7 ===== -->
+<section id="ch7" class="bg-light py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-7xl sm:text-8xl font-black text-white leading-none select-none">07</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary -mt-6 sm:-mt-8 mb-2">提言 -- 負のループを断ち切るために</h2>
+    <p class="text-muted mb-12">データが示す2つのループと具体的アクション</p>
+
+    <div class="narrative">
+      <p class="text-base leading-loose text-slate-600 mb-12">本調査を通じて浮かび上がったのは、経理人材が陥りがちな「負のループ」と、そこから抜け出す「正のループ」の存在である。負のループは放置すれば自己強化されるが、どこか1箇所に介入すれば断ち切れる。以下、データの裏付けとともにその全貌を明らかにする。</p>
+    </div>
+
+    <!-- Negative Loop -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-danger">負のループ -- キャリア停滞の構造</h3>
+      <p class="text-xs text-danger font-semibold mb-4">知らない → 動かない → 変わらない</p>
+
+      <div class="narrative mb-8">
+        <p class="text-sm text-slate-600 leading-relaxed">本調査のデータを統合すると、会計人材のキャリアが停滞に至る明確な因果経路が浮かび上がる。以下の6つのステップが連鎖的に機能し、一度入ると自力での脱出が極めて困難な「下降スパイラル」を形成する。</p>
+      </div>
+
+      <div class="bg-red-50 border border-red-200 p-6 sm:p-8 mb-8">
+        <div class="flex flex-col items-center gap-0">
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 1</p>
+            <p class="text-sm font-semibold text-red-900">分断された業務環境に入る（日常経理のみ49.0%）</p>
+          </div>
+          <div class="flow-arrow-down text-red-400"></div>
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 2</p>
+            <p class="text-sm font-semibold text-red-900">会社固有スキルが蓄積される（50代の28.6%が「社外で通用しない」）</p>
+          </div>
+          <div class="flow-arrow-down text-red-400"></div>
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 3</p>
+            <p class="text-sm font-semibold text-red-900">道が見えなくなる（34.3%がビジョン不明確）</p>
+          </div>
+          <div class="flow-arrow-down text-red-400"></div>
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 4</p>
+            <p class="text-sm font-semibold text-red-900">行動が停滞する（支援なし環境の70.6%が行動ゼロ）</p>
+          </div>
+          <div class="flow-arrow-down text-red-400"></div>
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 5</p>
+            <p class="text-sm font-semibold text-red-900">市場価値が上がらない（日常経理のみ層は400~500万円に集中）</p>
+          </div>
+          <div class="flow-arrow-down text-red-400"></div>
+          <div class="bg-white border-2 border-red-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-red-400 mb-1">STEP 6</p>
+            <p class="text-sm font-semibold text-red-900">満足度が低下する（安定志向型の不満率11.5%で全類型最高）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="narrative mb-8">
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">この6ステップは、個々の要因が独立しているのではなく、前段階が次段階を構造的に規定する「連鎖」として機能している。狭い業務範囲で年数を重ねると、「その会社でしか通用しないスキル」が偏って蓄積される。通用スキルの欠如はキャリアの見通しを奪い、ビジョンがなく成長実感もないため、「何のために努力するのか」が見えず行動が完全に停止する。</p>
+        <p class="text-sm text-slate-600 leading-relaxed">最も深刻なのは、この負のループに入った本人が、自力での脱出が極めて困難だという点である。外部からの介入――企業の制度設計、コミュニティの支援、メンターの存在――が、この構造を断ち切る鍵となる。</p>
+      </div>
+    </div>
+
+    <!-- Positive Loop -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-2 pl-4 border-l-4 border-emerald-600">正のループ -- キャリア成長の構造</h3>
+      <p class="text-xs text-emerald-600 font-semibold mb-4">知る → 動く → 変わる</p>
+
+      <div class="narrative mb-8">
+        <p class="text-sm text-slate-600 leading-relaxed">負のループと対照的に、本調査は会計人材のキャリアが好循環に入るメカニズムも明確に描き出している。以下の6ステップが、成長の「フライホイール」を構成する。</p>
+      </div>
+
+      <div class="bg-emerald-50 border border-emerald-200 p-6 sm:p-8 mb-8">
+        <div class="flex flex-col items-center gap-0">
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 1</p>
+            <p class="text-sm font-semibold text-emerald-900">意識的な選択（自ら希望した人のビジョン明確率39.4%）</p>
+          </div>
+          <div class="flow-arrow-down text-emerald-400"></div>
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 2</p>
+            <p class="text-sm font-semibold text-emerald-900">積極的な行動（成長実感「とてもある」層の行動ゼロ率0.0%）</p>
+          </div>
+          <div class="flow-arrow-down text-emerald-400"></div>
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 3</p>
+            <p class="text-sm font-semibold text-emerald-900">経験の多様性が拡がる（兼務者のスキル成長実感34.0%）</p>
+          </div>
+          <div class="flow-arrow-down text-emerald-400"></div>
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 4</p>
+            <p class="text-sm font-semibold text-emerald-900">市場価値が上昇する（高度専門層の66~75%が年収800万円以上）</p>
+          </div>
+          <div class="flow-arrow-down text-emerald-400"></div>
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 5</p>
+            <p class="text-sm font-semibold text-emerald-900">満足度と自己効力感が高まる（成長実感「とてもある」層の満足度44.9%）</p>
+          </div>
+          <div class="flow-arrow-down text-emerald-400"></div>
+          <div class="bg-white border-2 border-emerald-300 px-6 py-4 text-center max-w-lg w-full">
+            <p class="text-xs font-inter font-bold text-emerald-500 mb-1">STEP 6</p>
+            <p class="text-sm font-semibold text-emerald-900">さらなる挑戦へ（成長実感「とてもある」層の37.2%が大きなリスクを許容）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="narrative mb-8">
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">この正のループの核心は、「どこから入っても回り始める」という点にある。意識的な選択ができなくても、小さな行動から始められる。行動が難しければ、兼務の機会を求めることから始められる。どの入口から入っても、一度回り始めたフライホイールは自己強化的に加速していく。</p>
+        <p class="text-sm text-slate-600 leading-relaxed">負のループからの脱出も、正のループへの参入も、「最初の一歩」から始まる。本白書が示すデータは、その一歩の先にある景色が、想像以上に大きく異なることを、数字をもって証明している。</p>
+      </div>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- 4 Recommendations for Individuals -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-8 pl-4 border-l-4 border-accent">個人への4つの提言</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-primary pt-6 px-1">
+          <p class="font-inter text-3xl font-black text-slate-200 mb-3">01</p>
+          <h4 class="text-base font-bold text-primary mb-3">キャリアビジョンを言語化する</h4>
+          <p class="text-sm text-muted leading-relaxed">自分のMission（使命）・Vision（将来像）・Values（価値観）を策定する。漠然とした不安は、言語化した瞬間に「課題」に変わる。ビジョンが明確な人の満足度は50.7%（n=67）。ビジョン不在層の3.4%（n=29）と比較すると、その差は15倍。「たまたま始めた仕事」であっても、「自ら選び直す」意識が全てを変え得る。</p>
+        </div>
+        <div class="border-t-2 border-primary pt-6 px-1">
+          <p class="font-inter text-3xl font-black text-slate-200 mb-3">02</p>
+          <h4 class="text-base font-bold text-primary mb-3">経験の幅を意識的に広げる</h4>
+          <p class="text-sm text-muted leading-relaxed">日常経理に留まらず、管理会計・連結決算・税務・内部統制など「制度会計プレミアム」のある領域に踏み出す。兼務者のスキル成長実感は専任者の2倍以上（34.0% vs 15.1%）。高度専門経験者の66~75%が年収800万円以上に集中するという事実が、経験の幅を広げる価値を証明している。</p>
+        </div>
+        <div class="border-t-2 border-primary pt-6 px-1">
+          <p class="font-inter text-3xl font-black text-slate-200 mb-3">03</p>
+          <h4 class="text-base font-bold text-primary mb-3">「安全な挑戦」から始める</h4>
+          <p class="text-sm text-muted leading-relaxed">転職だけがリスクテイクではない。社内プロジェクト参加（30.2%が実践）、AI/IT導入推進（34.0%が実践）、資格取得（28.2%が実践）など、現職に留まりながらできる挑戦は数多くある。成長実感が「とてもある」層で行動ゼロ率は0.0%。小さな一歩でもフライホイールは回り始める。</p>
+        </div>
+        <div class="border-t-2 border-primary pt-6 px-1">
+          <p class="font-inter text-3xl font-black text-slate-200 mb-3">04</p>
+          <h4 class="text-base font-bold text-primary mb-3">外部との接点を持つ</h4>
+          <p class="text-sm text-muted leading-relaxed">ビジョンが描けない最大の理由は「何がしたいかわからない」（37.6%、n=117）。これは外部のロールモデルに触れることで解消できる。学習支援環境の有無が44ポイントの格差を生む以上、環境が与えてくれないものは自ら外に取りに行かなければならない。コミュニティ参加・社外ネットワーク構築が、「知る」きっかけを作る。</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider bg-slate-300">
+
+    <!-- Recommendations for Companies -->
+    <div class="max-w-5xl mx-auto border-t border-slate-200 pt-12 mb-12">
+      <h3 class="text-lg font-bold text-primary mb-8 pl-4 border-l-4 border-danger">企業への提言 -- 学習支援は「福利厚生」ではなく「人的資本インフラ」</h3>
+
+      <div class="narrative mb-8">
+        <p class="text-base leading-loose text-slate-600 mb-6">本調査が最も強く示しているのは、職場環境が個人のキャリアを構造的に規定するという事実である。学習支援の有無による44~47ポイントの格差は、いかなる個人的な要因よりも大きい。企業が学習支援を提供しないことは、自社の人材の市場価値を構造的に毀損する選択をしていることに等しい。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="callout border-danger bg-red-50">
+          <h4 class="text-sm font-bold text-primary mb-2">学習支援制度の整備</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">学習支援なし環境の行動ゼロ率70.6%、やりがいなし64.7%。制度の有無がこれほどの差を生む以上、学習支援は最もROIの高い人的資本投資である。外部研修、資格取得支援、セミナー参加奨励などを制度化すべきだ。</p>
+        </div>
+        <div class="callout border-accent bg-sky-50">
+          <h4 class="text-sm font-bold text-primary mb-2">越境経験のジョブデザイン</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">兼務者の成長実感は専任者の2倍以上。経理の枠に閉じないジョブスコープを意図的に設計することで、T字型人材を育成し、組織の会計機能全体を高度化できる。</p>
+        </div>
+        <div class="callout border-amber-500 bg-amber-50">
+          <h4 class="text-sm font-bold text-primary mb-2">キャリアパスの可視化</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">望まない配属者のビジョン明確率2.9%。3人に1人を放置することは、組織にとっても深刻な機会損失である。配属理由に関わらず、経理の仕事の意義や将来性を伝え、本人が「自分の仕事」として再定義できるよう支援する責任がある。</p>
+        </div>
+        <div class="callout border-emerald-600 bg-emerald-50">
+          <h4 class="text-sm font-bold text-primary mb-2">外部コミュニティとの接続</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">外資系の行動ゼロ率1.5%、日系非上場15.2%。この格差は制度だけでは埋められない。社外のコミュニティや学習ネットワークへの参加を推奨し、社員が「社外でも通用する」自信を獲得できる環境を整えることが求められる。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final pull quote -->
+    <div class="pull-quote py-12 mb-12">
+      <div class="w-divider bg-primary"></div>
+      <p class="text-xl sm:text-2xl font-bold text-primary leading-relaxed">知らないことと、動かないことが、キャリアを止める。<br>しかし、知り、動けば、キャリアは必ず動き出す。</p>
+      <p class="text-xs text-muted mt-3">会計ファイナンス人材白書 2026</p>
+    </div>
+
+    <div class="callout border-emerald-600 bg-emerald-50">
+      <p class="text-[10px] font-bold tracking-wider text-emerald-700 uppercase mb-2">Message</p>
+      <p class="text-sm leading-relaxed text-slate-700">CPAエクセレントパートナーズは、会計ファイナンス人材の「知る」と「動く」を支援するコミュニティとして、本白書のデータに基づいたキャリア支援プログラムを展開してまいります。負のループを断ち切り、正のループを回す――その最初の一歩を、私たちと一緒に踏み出しましょう。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPENDIX ===== -->
+<section id="appendix" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-inter text-xs tracking-[0.2em] text-muted uppercase mb-3">Appendix</p>
+    <h2 class="text-2xl sm:text-3xl font-black text-primary mb-12">調査概要</h2>
+
+    <div class="border border-slate-200 divide-y divide-slate-200 mb-12">
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">調査名</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">会計ファイナンス人材白書 2026 経理財務人材調査</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">調査機関</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">ノウンズ株式会社</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">調査方法</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">Webアンケート</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">調査対象</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">経理財務業務の経験がある20代~60代のビジネスパーソン</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">有効回答数</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">341名</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">調査期間</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">2026年3月~4月</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">発行</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">CPAエクセレントパートナーズ株式会社</div>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4">
+        <div class="col-span-1 bg-light px-4 py-3 text-sm font-semibold text-primary">発行日</div>
+        <div class="col-span-2 sm:col-span-3 px-4 py-3 text-sm">2026年7月</div>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-200 pt-12 mb-8">
+      <h3 class="text-lg font-bold text-primary mb-4 pl-4 border-l-4 border-accent">本白書について</h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">本白書は、経理財務人材のキャリア形成における課題と機会を、定量データに基づいて明らかにすることを目的としています。調査結果の引用・転載にあたっては、出典として「会計ファイナンス人材白書 2026（CPAエクセレントパートナーズ株式会社）」を明記してください。</p>
+      <p class="text-sm text-slate-600 leading-relaxed">本白書の内容に関するお問い合わせ、または経理財務人材のキャリア支援に関するご相談は、CPAエクセレントパートナーズ株式会社までご連絡ください。</p>
+    </div>
+
+    <div class="border-t border-slate-200 pt-8">
+      <h3 class="text-lg font-bold text-primary mb-4 pl-4 border-l-4 border-accent">免責事項</h3>
+      <p class="text-sm text-slate-600 leading-relaxed">本白書に掲載されたデータおよび分析結果は、調査時点における回答者の回答に基づくものであり、経理財務人材全体を代表するものではありません。また、本白書の内容は情報提供を目的としたものであり、特定のキャリア選択や投資判断を推奨するものではありません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-primary text-center py-12 px-6">
+  <p class="text-sm font-semibold text-white mb-2">会計ファイナンス人材白書 2026</p>
+  <p class="text-xs text-slate-400">CPAエクセレントパートナーズ株式会社</p>
+  <p class="text-xs text-slate-500 mt-2">&copy; 2026 CPA EXCELLENT PARTNERS Co., Ltd. All rights reserved.</p>
+</footer>
+
+<!-- ===== ECHARTS INITIALIZATION ===== -->
+<script>
+(function() {
+  // Common theme
+  var SLATE900 = '#0f172a';
+  var SKY600 = '#0284c7';
+  var RED600 = '#dc2626';
+  var SLATE500 = '#64748b';
+  var SLATE300 = '#cbd5e1';
+  var SLATE100 = '#f1f5f9';
+  var EMERALD600 = '#059669';
+  var AMBER500 = '#f59e0b';
+
+  var allCharts = [];
+
+  function init(id, option) {
+    var dom = document.getElementById(id);
+    if (!dom) return null;
+    var chart = echarts.init(dom);
+    chart.setOption(option);
+    allCharts.push(chart);
+    return chart;
+  }
+
+  // Shared text style
+  var labelStyle = { fontFamily: 'Noto Sans JP, Inter, sans-serif', fontSize: 12, color: SLATE500 };
+  var titleStyle = { show: false };
+
+  // ===== CH1: Gender =====
+  init('chart-gender', {
+    title: titleStyle,
+    grid: { left: 60, right: 60, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['女性', '男性'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 28.3, itemStyle: { color: SKY600 } },
+        { value: 71.7, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 13, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function(p) { return p[0].name + ': ' + p[0].value + '%'; } }
+  });
+
+  // ===== CH1: Age =====
+  init('chart-age', {
+    title: titleStyle,
+    grid: { left: 40, right: 30, top: 30, bottom: 40 },
+    xAxis: { type: 'category', data: ['20代', '30代', '40代', '50代', '60代'], axisLabel: labelStyle, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 35, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 18.6, itemStyle: { color: SLATE500 } },
+        { value: 27.8, itemStyle: { color: SLATE900 } },
+        { value: 27.7, itemStyle: { color: SLATE900 } },
+        { value: 22.3, itemStyle: { color: SLATE500 } },
+        { value: 3.6, itemStyle: { color: SLATE300 } }
+      ],
+      barWidth: 36,
+      label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 12, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', formatter: function(p) { return p[0].name + ': ' + p[0].value + '%'; } }
+  });
+
+  // ===== CH1: Income =====
+  init('chart-income', {
+    title: titleStyle,
+    grid: { left: 100, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 30, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['1000万以上', '800万-1000万', '600-800万', '500-600万', '400-500万', '300-400万', '~300万'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 4.1, itemStyle: { color: SLATE300 } },
+        { value: 7.9, itemStyle: { color: SLATE500 } },
+        { value: 14.7, itemStyle: { color: SKY600 } },
+        { value: 16.4, itemStyle: { color: SKY600 } },
+        { value: 26.1, itemStyle: { color: SLATE900 } },
+        { value: 18.5, itemStyle: { color: SKY600 } },
+        { value: 12.3, itemStyle: { color: SLATE500 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH1: Company Type =====
+  init('chart-company', {
+    title: titleStyle,
+    grid: { left: 120, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 60, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['外資系', '日系上場', '日系上場グループ', '日系非上場'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 19.9, itemStyle: { color: SLATE500 } },
+        { value: 25.2, itemStyle: { color: SKY600 } },
+        { value: 30.8, itemStyle: { color: SKY600 } },
+        { value: 52.2, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 24,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH1: How Started =====
+  init('chart-started', {
+    title: titleStyle,
+    tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
+    series: [{
+      type: 'pie',
+      radius: ['45%', '70%'],
+      center: ['50%', '50%'],
+      data: [
+        { value: 57.5, name: '自ら希望して経理に (57.5%)', itemStyle: { color: SKY600 } },
+        { value: 36.6, name: '望まない配属・異動 (36.6%)', itemStyle: { color: AMBER500 } },
+        { value: 5.9, name: 'その他 (5.9%)', itemStyle: { color: SLATE300 } }
+      ],
+      label: { fontFamily: 'Noto Sans JP', fontSize: 12, color: SLATE500 },
+      emphasis: { itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.1)' } }
+    }]
+  });
+
+  // ===== CH2: Satisfaction + Vision side by side =====
+  init('chart-satisfaction-vision', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: [
+      { left: 50, right: '52%', top: 40, bottom: 50 },
+      { left: '52%', right: 50, top: 40, bottom: 50 }
+    ],
+    xAxis: [
+      { gridIndex: 0, type: 'value', max: 60, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false }, name: '仕事満足度', nameLocation: 'middle', nameGap: -20, nameTextStyle: { ...labelStyle, fontSize: 11 } },
+      { gridIndex: 1, type: 'value', max: 50, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false }, name: 'キャリアビジョン', nameLocation: 'middle', nameGap: -20, nameTextStyle: { ...labelStyle, fontSize: 11 } }
+    ],
+    yAxis: [
+      { gridIndex: 0, type: 'category', data: ['不満', 'やや不満', 'やや満足', '満足'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+      { gridIndex: 1, type: 'category', data: ['全くない', 'あまりない', 'ある程度', 'はっきりしている'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } }
+    ],
+    series: [
+      {
+        type: 'bar', xAxisIndex: 0, yAxisIndex: 0, barWidth: 20,
+        data: [
+          { value: 6.7, itemStyle: { color: RED600 } },
+          { value: 22.0, itemStyle: { color: AMBER500 } },
+          { value: 51.0, itemStyle: { color: EMERALD600 } },
+          { value: 20.2, itemStyle: { color: '#065f46' } }
+        ],
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+      },
+      {
+        type: 'bar', xAxisIndex: 1, yAxisIndex: 1, barWidth: 20,
+        data: [
+          { value: 8.5, itemStyle: { color: RED600 } },
+          { value: 25.8, itemStyle: { color: AMBER500 } },
+          { value: 46.0, itemStyle: { color: SKY600 } },
+          { value: 19.6, itemStyle: { color: SLATE900 } }
+        ],
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+      }
+    ]
+  });
+
+  // ===== CH2: Vision x Satisfaction Heatmap =====
+  var visionLabels = ['はっきりしている', 'ある程度', 'あまりない', '全くない'];
+  var satLabels = ['満足', 'やや満足', 'やや不満', '不満'];
+  var heatData = [
+    [0,0,3.4],[1,0,31.0],[2,0,37.9],[3,0,27.6],
+    [0,1,5.7],[1,1,46.6],[2,1,36.4],[3,1,11.4],
+    [0,2,19.7],[1,2,57.3],[2,2,18.5],[3,2,4.5],
+    [0,3,50.7],[1,3,35.8],[2,3,10.4],[3,3,3.0]
+  ];
+  init('chart-vision-satisfaction-heatmap', {
+    title: titleStyle,
+    tooltip: {
+      position: 'top',
+      formatter: function(p) {
+        return visionLabels[3-p.value[1]] + ' x ' + satLabels[p.value[0]] + ': ' + p.value[2] + '%';
+      }
+    },
+    grid: { left: 120, right: 60, top: 40, bottom: 60 },
+    xAxis: { type: 'category', data: satLabels, axisLabel: labelStyle, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false }, position: 'top' },
+    yAxis: { type: 'category', data: [...visionLabels].reverse(), axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    visualMap: {
+      min: 0, max: 58, calculable: false, orient: 'horizontal', left: 'center', bottom: 10,
+      inRange: { color: ['#fee2e2', '#fef3c7', '#d1fae5', '#065f46'] },
+      textStyle: labelStyle
+    },
+    series: [{
+      type: 'heatmap',
+      data: heatData,
+      label: { show: true, formatter: function(p) { return p.value[2] + '%'; }, fontFamily: 'Inter', fontWeight: 700, fontSize: 13, color: SLATE900 },
+      emphasis: { itemStyle: { shadowBlur: 6, shadowColor: 'rgba(0,0,0,0.15)' } }
+    }]
+  });
+
+  // ===== CH2: Vision Reasons =====
+  init('chart-vision-reasons', {
+    title: titleStyle,
+    grid: { left: 160, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 45, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['情報不足', 'ロールモデルがいない', '忙しくて余裕がない', '何がしたいかわからない'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 25.6, itemStyle: { color: SKY600 } },
+        { value: 32.5, itemStyle: { color: AMBER500 } },
+        { value: 34.2, itemStyle: { color: AMBER500 } },
+        { value: 37.6, itemStyle: { color: RED600 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 12, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH2: Started x Vision =====
+  init('chart-started-vision', {
+    title: titleStyle,
+    grid: { left: 120, right: 60, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 45, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['望まない配属', '自ら希望'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 2.9, itemStyle: { color: RED600 } },
+        { value: 39.4, itemStyle: { color: EMERALD600 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 14, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    graphic: [{
+      type: 'text',
+      left: 'center',
+      top: 'middle',
+      style: { text: '13x', fontFamily: 'Inter', fontSize: 48, fontWeight: 900, fill: 'rgba(15,23,42,0.06)' }
+    }]
+  });
+
+  // ===== CH2: Workplace Environment Grouped Bar (NEW) =====
+  init('chart-workplace-env', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 140, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'value', max: 80, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['行動ゼロ率', '社内外通用自信', 'スキル成長実感', 'ビジョン明確率'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '支援あり（積極的）', type: 'bar', data: [2.3, 38.8, 46.6, 44.0], itemStyle: { color: EMERALD600 }, barWidth: 16, barGap: '20%',
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '支援あり（消極的）', type: 'bar', data: [8.5, 22.1, 28.3, 26.5], itemStyle: { color: SKY600 }, barWidth: 16,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '推奨のみ', type: 'bar', data: [18.7, 11.2, 14.8, 15.3], itemStyle: { color: AMBER500 }, barWidth: 16,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '支援なし', type: 'bar', data: [70.6, 0, 0, 0], itemStyle: { color: RED600 }, barWidth: 16,
+        label: { show: true, position: 'right', formatter: function(p) { return p.value === 0 ? '0.0%' : p.value + '%'; }, fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: RED600 } }
+    ]
+  });
+
+  // ===== CH3: Joy Factors =====
+  init('chart-joy-factors', {
+    title: titleStyle,
+    grid: { left: 120, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 50, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['業務改善', '頼りにされる', '意思決定支援', '組織の誠実性', '正確な業務遂行'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 27.6, itemStyle: { color: SLATE500 } },
+        { value: 27.6, itemStyle: { color: SLATE500 } },
+        { value: 28.7, itemStyle: { color: SKY600 } },
+        { value: 32.0, itemStyle: { color: SKY600 } },
+        { value: 45.2, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH3: Stance =====
+  init('chart-stance', {
+    title: titleStyle,
+    grid: { left: 100, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 50, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['創造・開拓', '専門・追求', '柔軟・適応', '習熟・安定', '改善・効率'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 29.6, itemStyle: { color: SLATE500 } },
+        { value: 29.9, itemStyle: { color: SKY600 } },
+        { value: 34.6, itemStyle: { color: SKY600 } },
+        { value: 43.4, itemStyle: { color: SLATE900 } },
+        { value: 44.3, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH3: Stance x Outcomes (NEW) =====
+  init('chart-stance-outcomes', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 100, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'value', max: 40, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['習熟・安定', '柔軟・適応', '専門・追求', '創造・開拓'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '不満率', type: 'bar', data: [11.5, 5.9, 5.9, 4.0], itemStyle: { color: RED600 }, barWidth: 14, barGap: '20%',
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '行動ゼロ率', type: 'bar', data: [15.5, 3.4, 5.9, 3.4], itemStyle: { color: AMBER500 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '通用スキルなし', type: 'bar', data: [23.0, 9.3, 3.9, 3.9], itemStyle: { color: SLATE500 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: 'ビジョン明確率', type: 'bar', data: [10.8, 22.0, 36.3, 31.7], itemStyle: { color: EMERALD600 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } }
+    ]
+  });
+
+  // ===== CH3: Self-Evaluation 4-quadrant =====
+  init('chart-self-eval', {
+    title: titleStyle,
+    tooltip: { trigger: 'item', formatter: '{b}: {c}%' },
+    series: [{
+      type: 'pie',
+      radius: ['40%', '68%'],
+      center: ['50%', '50%'],
+      data: [
+        { value: 17.9, name: '社内高 + 外部自信 (17.9%)', itemStyle: { color: EMERALD600 } },
+        { value: 21.1, name: '社内低 + 外部自信 (21.1%)', itemStyle: { color: SKY600 } },
+        { value: 43.1, name: '社内高 + 外部不安 (43.1%)', itemStyle: { color: AMBER500 } },
+        { value: 17.9, name: '社内低 + 外部不安 (17.9%)', itemStyle: { color: RED600 } }
+      ],
+      label: { fontFamily: 'Noto Sans JP', fontSize: 11, color: SLATE500, formatter: '{b}' },
+      emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.1)' } }
+    }]
+  });
+
+  // ===== CH3: Self-eval x Vision =====
+  init('chart-selfeval-vision', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 140, right: 30, top: 20, bottom: 50 },
+    xAxis: { type: 'value', max: 70, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['社内低 + 外部不安', '社内高 + 外部不安', '社内低 + 外部自信', '社内高 + 外部自信'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: 'ビジョン明確', type: 'bar', stack: 'total', data: [17.6, 38.8, 52.8, 60.7], itemStyle: { color: SLATE900 }, barWidth: 24, label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: 'ビジョン不明確', type: 'bar', stack: 'total', data: [47.6, 61.2, 47.2, 39.3], itemStyle: { color: SLATE300 }, label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: SLATE500 } }
+    ]
+  });
+
+  // ===== CH4: Job Changes =====
+  init('chart-job-changes', {
+    title: titleStyle,
+    grid: { left: 40, right: 30, top: 30, bottom: 40 },
+    xAxis: { type: 'category', data: ['0回', '1回', '2回', '3回', '4回', '5回+'], axisLabel: labelStyle, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 35, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 14.4, itemStyle: { color: SLATE500 } },
+        { value: 22.3, itemStyle: { color: SKY600 } },
+        { value: 31.1, itemStyle: { color: SLATE900 } },
+        { value: 18.8, itemStyle: { color: SKY600 } },
+        { value: 4.7, itemStyle: { color: SLATE300 } },
+        { value: 8.8, itemStyle: { color: AMBER500 } }
+      ],
+      barWidth: 36,
+      label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 12, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis' }
+  });
+
+  // ===== CH4: Reasons vs Gains =====
+  init('chart-reasons-gains', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 130, right: 40, top: 20, bottom: 50 },
+    xAxis: { type: 'value', max: 45, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['職場文化の改善', 'ライフイベント対応', '柔軟な働き方', '新しいスキル習得', '会社の将来性', '年収アップ'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '転職理由', type: 'bar', data: ['-', '-', 32.9, 31.5, 34.6, 40.8], itemStyle: { color: SLATE900 }, barWidth: 14, barGap: '20%' },
+      { name: '実際に得られたもの', type: 'bar', data: [28.4, 29.8, 34.9, '-', '-', 36.3], itemStyle: { color: SKY600 }, barWidth: 14 }
+    ]
+  });
+
+  // ===== CH4: Changes x Income =====
+  init('chart-changes-income', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis' },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 50, right: 30, top: 20, bottom: 50 },
+    xAxis: { type: 'category', data: ['0回', '1回', '2回', '3回', '4回', '5回以上'], axisLabel: labelStyle, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 40, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [
+      {
+        name: '年収600万以上', type: 'bar',
+        data: [20.4, 23.7, 32.1, 34.4, 25.0, 16.7],
+        itemStyle: { color: SLATE900 },
+        barWidth: 24,
+        label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 }
+      },
+      {
+        name: '年収800万以上', type: 'line',
+        data: [8.2, 10.5, 15.1, 17.2, 12.5, 6.7],
+        lineStyle: { color: RED600, width: 2 },
+        itemStyle: { color: RED600 },
+        symbol: 'circle',
+        symbolSize: 8,
+        label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: RED600 }
+      }
+    ]
+  });
+
+  // ===== CH5: Risk Tolerance - Polar =====
+  init('chart-risk-tolerance', {
+    title: titleStyle,
+    tooltip: { trigger: 'item', formatter: '{b}: {c}%' },
+    angleAxis: {
+      type: 'category',
+      data: ['積極的に許容', 'ある程度許容', 'できるだけ回避', '絶対に回避'],
+      axisLabel: { ...labelStyle, fontSize: 11 }
+    },
+    radiusAxis: { max: 55, axisLabel: { show: false }, splitLine: { lineStyle: { color: SLATE100 } } },
+    polar: { radius: '65%' },
+    series: [{
+      type: 'bar',
+      coordinateSystem: 'polar',
+      data: [
+        { value: 12.6, itemStyle: { color: EMERALD600 } },
+        { value: 50.7, itemStyle: { color: SKY600 } },
+        { value: 31.7, itemStyle: { color: AMBER500 } },
+        { value: 5.0, itemStyle: { color: RED600 } }
+      ],
+      label: { show: true, position: 'outside', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 12, color: SLATE900 }
+    }]
+  });
+
+  // ===== CH5: Perceived Risks =====
+  init('chart-perceived-risks', {
+    title: titleStyle,
+    grid: { left: 120, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 50, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['職場環境の悪化', '雇用不安', '収入減', 'WLB崩壊'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 30.5, itemStyle: { color: AMBER500 } },
+        { value: 39.9, itemStyle: { color: AMBER500 } },
+        { value: 43.7, itemStyle: { color: RED600 } },
+        { value: 46.0, itemStyle: { color: RED600 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 12, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH5: Skill Growth =====
+  init('chart-skill-growth', {
+    title: titleStyle,
+    tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
+    series: [{
+      type: 'pie',
+      radius: ['40%', '68%'],
+      center: ['50%', '50%'],
+      data: [
+        { value: 22.9, name: 'とても成長 (22.9%)', itemStyle: { color: EMERALD600 } },
+        { value: 54.3, name: 'やや成長 (54.3%)', itemStyle: { color: '#6ee7b7' } },
+        { value: 18.5, name: 'あまり成長していない (18.5%)', itemStyle: { color: AMBER500 } },
+        { value: 4.4, name: '全く成長していない (4.4%)', itemStyle: { color: RED600 } }
+      ],
+      label: { fontFamily: 'Noto Sans JP', fontSize: 11, color: SLATE500 },
+      emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.1)' } }
+    }]
+  });
+
+  // ===== CH5: Risk x Satisfaction - Grouped Bars =====
+  init('chart-risk-satisfaction', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 120, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'value', max: 60, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['絶対に回避', 'できるだけ回避', 'ある程度許容', '積極的に許容'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '満足', type: 'bar', stack: 'total', data: [0, 10.2, 21.4, 44.2], itemStyle: { color: '#065f46' }, barWidth: 28,
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 5 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: 'やや満足', type: 'bar', stack: 'total', data: [29.4, 47.2, 55.5, 39.5], itemStyle: { color: EMERALD600 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: 'やや不満', type: 'bar', stack: 'total', data: [41.2, 31.5, 18.5, 11.6], itemStyle: { color: AMBER500 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: '不満', type: 'bar', stack: 'total', data: [29.4, 11.1, 4.6, 4.7], itemStyle: { color: RED600 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 8 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } }
+    ]
+  });
+
+  // ===== CH5: Risk x Vision =====
+  init('chart-risk-vision', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 120, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['絶対に回避', 'できるだけ回避', 'ある程度許容', '積極的に許容'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: 'はっきりしている', type: 'bar', stack: 'total', data: [5.9, 8.3, 20.8, 44.8], itemStyle: { color: SLATE900 }, barWidth: 28,
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 7 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: 'ある程度', type: 'bar', stack: 'total', data: [17.6, 40.7, 51.4, 37.2], itemStyle: { color: SKY600 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: 'あまりない', type: 'bar', stack: 'total', data: [21.3, 37.0, 22.5, 14.0], itemStyle: { color: AMBER500 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 10 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } },
+      { name: '全くない', type: 'bar', stack: 'total', data: [55.2, 13.9, 5.2, 4.0], itemStyle: { color: RED600 },
+        label: { show: true, position: 'inside', formatter: function(p) { return p.value > 8 ? p.value + '%' : ''; }, fontFamily: 'Inter', fontSize: 10, fontWeight: 600, color: '#fff' } }
+    ]
+  });
+
+  // ===== CH5: Skill Growth x Vision (NEW) =====
+  init('chart-growth-vision', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 20, top: 20, bottom: 40 },
+    xAxis: { type: 'category', data: ['まったくない', 'あまり', 'やや', 'とてもある'], axisLabel: { ...labelStyle, fontSize: 10 }, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 70, axisLabel: { formatter: '{value}%', ...labelStyle, fontSize: 10 }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 6.7, itemStyle: { color: RED600 } },
+        { value: 14.3, itemStyle: { color: AMBER500 } },
+        { value: 32.4, itemStyle: { color: SKY600 } },
+        { value: 65.4, itemStyle: { color: EMERALD600 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 11, color: SLATE900 }
+    }]
+  });
+
+  // ===== CH5: Skill Growth x Risk (NEW) =====
+  init('chart-growth-risk', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 20, top: 20, bottom: 40 },
+    xAxis: { type: 'category', data: ['まったくない', 'あまり', 'やや', 'とてもある'], axisLabel: { ...labelStyle, fontSize: 10 }, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 45, axisLabel: { formatter: '{value}%', ...labelStyle, fontSize: 10 }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 1.6, itemStyle: { color: RED600 } },
+        { value: 6.3, itemStyle: { color: AMBER500 } },
+        { value: 18.9, itemStyle: { color: SKY600 } },
+        { value: 37.2, itemStyle: { color: EMERALD600 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 11, color: SLATE900 }
+    }]
+  });
+
+  // ===== CH5: Skill Growth x Satisfaction (NEW) =====
+  init('chart-growth-satisfaction', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 20, top: 20, bottom: 40 },
+    xAxis: { type: 'category', data: ['まったくない', 'あまり', 'やや', 'とてもある'], axisLabel: { ...labelStyle, fontSize: 10 }, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 50, axisLabel: { formatter: '{value}%', ...labelStyle, fontSize: 10 }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 4.8, itemStyle: { color: RED600 } },
+        { value: 9.5, itemStyle: { color: AMBER500 } },
+        { value: 22.7, itemStyle: { color: SKY600 } },
+        { value: 44.9, itemStyle: { color: EMERALD600 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 700, fontSize: 11, color: SLATE900 }
+    }]
+  });
+
+  // ===== CH5: Skill Growth x Action Zero (NEW) =====
+  init('chart-growth-action', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 20, top: 20, bottom: 40 },
+    xAxis: { type: 'category', data: ['まったくない', 'あまり', 'やや', 'とてもある'], axisLabel: { ...labelStyle, fontSize: 10 }, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 45, axisLabel: { formatter: '{value}%', ...labelStyle, fontSize: 10 }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 40.0, itemStyle: { color: RED600 } },
+        { value: 19.0, itemStyle: { color: AMBER500 } },
+        { value: 5.4, itemStyle: { color: SKY600 } },
+        { value: 0, itemStyle: { color: EMERALD600 } }
+      ],
+      barWidth: 28,
+      label: { show: true, position: 'top', formatter: function(p) { return p.value === 0 ? '0.0%' : p.value + '%'; }, fontFamily: 'Inter', fontWeight: 700, fontSize: 11, color: SLATE900 }
+    }]
+  });
+
+  // ===== CH5: Age x Key Metrics (NEW) =====
+  init('chart-age-metrics', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 40, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'category', data: ['20代', '30代', '40代', '50代', '60代'], axisLabel: labelStyle, axisLine: { lineStyle: { color: SLATE300 } }, axisTick: { show: false } },
+    yAxis: { type: 'value', max: 40, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    series: [
+      {
+        name: '満足度', type: 'line',
+        data: [30.9, 22.1, 18.1, 7.9, 8.3],
+        lineStyle: { color: EMERALD600, width: 2.5 },
+        itemStyle: { color: EMERALD600 },
+        symbol: 'circle', symbolSize: 8,
+        label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: EMERALD600 }
+      },
+      {
+        name: 'ビジョン明確率', type: 'line',
+        data: [29.8, 23.2, 17.0, 12.7, 0],
+        lineStyle: { color: SKY600, width: 2.5 },
+        itemStyle: { color: SKY600 },
+        symbol: 'circle', symbolSize: 8,
+        label: { show: true, position: 'top', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SKY600 }
+      },
+      {
+        name: 'スキル成長実感', type: 'line',
+        data: [30.9, 26.3, 20.2, 14.3, 0],
+        lineStyle: { color: AMBER500, width: 2.5 },
+        itemStyle: { color: AMBER500 },
+        symbol: 'circle', symbolSize: 8,
+        label: { show: true, position: 'bottom', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: AMBER500 }
+      }
+    ]
+  });
+
+  // ===== CH6: Actions =====
+  init('chart-actions', {
+    title: titleStyle,
+    grid: { left: 150, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 40, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['外部コミュニティ参加', '資格取得', '社内プロジェクト参加', 'AI/IT導入推進'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 26.4, itemStyle: { color: SLATE500 } },
+        { value: 28.2, itemStyle: { color: SKY600 } },
+        { value: 30.2, itemStyle: { color: SKY600 } },
+        { value: 34.0, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH6: Skills Treemap =====
+  init('chart-skills-treemap', {
+    title: titleStyle,
+    tooltip: { formatter: '{b}: {c}%' },
+    series: [{
+      type: 'treemap',
+      data: [
+        {
+          name: 'ポータブルスキル',
+          children: [
+            { name: 'ビジネス分析力', value: 31.1, itemStyle: { color: SLATE900 } },
+            { name: 'ガバナンス構築', value: 26.4, itemStyle: { color: '#1e3a5f' } },
+            { name: '組織マネジメント', value: 25.5, itemStyle: { color: '#334155' } }
+          ]
+        },
+        {
+          name: '経理の強み',
+          children: [
+            { name: '数字力', value: 36.7, itemStyle: { color: SKY600 } },
+            { name: '精密性・正確性', value: 35.2, itemStyle: { color: '#0369a1' } },
+            { name: '収益構造理解', value: 32.3, itemStyle: { color: '#0c4a6e' } },
+            { name: '標準化思考', value: 29.0, itemStyle: { color: '#155e75' } }
+          ]
+        }
+      ],
+      label: {
+        show: true,
+        formatter: function(p) {
+          if (p.data.children) return '';
+          return p.name + '\n' + p.value + '%';
+        },
+        fontFamily: 'Noto Sans JP',
+        fontSize: 12,
+        fontWeight: 600,
+        color: '#fff',
+        lineHeight: 18
+      },
+      breadcrumb: {
+        show: true,
+        itemStyle: { textStyle: labelStyle }
+      },
+      levels: [
+        { itemStyle: { borderColor: '#fff', borderWidth: 3, gapWidth: 3 } },
+        { itemStyle: { borderColor: '#fff', borderWidth: 1, gapWidth: 1 } }
+      ]
+    }]
+  });
+
+  // ===== CH6: Experience Areas =====
+  init('chart-experience', {
+    title: titleStyle,
+    grid: { left: 140, right: 50, top: 20, bottom: 20 },
+    xAxis: { type: 'value', max: 55, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['高度専門領域', '業務企画 / 内部統制', '資金管理', '単体決算', '管理会計', '日常経理'], axisLabel: labelStyle, axisLine: { show: false }, axisTick: { show: false } },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 24.6, itemStyle: { color: SLATE500 } },
+        { value: 26.1, itemStyle: { color: SLATE500 } },
+        { value: 36.7, itemStyle: { color: SKY600 } },
+        { value: 37.2, itemStyle: { color: SKY600 } },
+        { value: 39.0, itemStyle: { color: SKY600 } },
+        { value: 49.0, itemStyle: { color: SLATE900 } }
+      ],
+      barWidth: 22,
+      label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 }
+    }],
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }
+  });
+
+  // ===== CH6: Concurrent vs Dedicated (NEW) =====
+  init('chart-concurrent-vs-dedicated', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 140, right: 50, top: 20, bottom: 50 },
+    xAxis: { type: 'value', max: 40, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['ビジョン明確率', '社内外通用自信', 'スキル成長実感'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '経理専任（主務）', type: 'bar', data: [17.6, 10.7, 15.1], itemStyle: { color: SLATE500 }, barWidth: 20, barGap: '30%',
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 } },
+      { name: '経理兼務', type: 'bar', data: [26.0, 28.0, 34.0], itemStyle: { color: EMERALD600 }, barWidth: 20,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 11, color: SLATE900 } }
+    ]
+  });
+
+  // ===== CH6: Company Type Comparison (NEW) =====
+  init('chart-company-type-comparison', {
+    title: titleStyle,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { bottom: 0, textStyle: labelStyle, itemWidth: 12, itemHeight: 12 },
+    grid: { left: 140, right: 50, top: 20, bottom: 60 },
+    xAxis: { type: 'value', max: 65, axisLabel: { formatter: '{value}%', ...labelStyle }, splitLine: { lineStyle: { color: SLATE100 } }, axisLine: { show: false } },
+    yAxis: { type: 'category', data: ['通用スキルなし率', '行動ゼロ率', '管理会計経験', 'ビジョン明確率'], axisLabel: { ...labelStyle, fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+    series: [
+      { name: '外資系', type: 'bar', data: [1.5, 1.5, 58.8, 39.7], itemStyle: { color: EMERALD600 }, barWidth: 14, barGap: '20%',
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '日系上場', type: 'bar', data: [8.1, 7.0, 45.3, 25.6], itemStyle: { color: SKY600 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '日系上場グループ', type: 'bar', data: [13.3, 10.5, 38.1, 19.0], itemStyle: { color: AMBER500 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } },
+      { name: '日系非上場', type: 'bar', data: [21.9, 15.2, 28.1, 14.6], itemStyle: { color: RED600 }, barWidth: 14,
+        label: { show: true, position: 'right', formatter: '{c}%', fontFamily: 'Inter', fontWeight: 600, fontSize: 10, color: SLATE900 } }
+    ]
+  });
+
+  // ===== Responsive resize =====
+  window.addEventListener('resize', function() {
+    allCharts.forEach(function(c) { c.resize(); });
+  });
+})();
+</script>
+
+</body>
+</html>
