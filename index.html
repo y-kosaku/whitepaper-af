@@ -190,7 +190,7 @@ body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
       <!-- Card 2 -->
       <div class="border-t-2 border-danger pt-6">
         <p class="font-inter text-5xl font-black text-danger leading-none">44<span class="text-2xl">pt</span></p>
-        <p class="text-xs text-muted mt-2 mb-3 font-inter">支援あり 44.0% vs 支援なし 0.0%</p>
+        <p class="text-xs text-muted mt-2 mb-3 font-inter">支援あり(n=116) 44.0% vs 支援なし(n=17, 参考値) 0.0%</p>
         <p class="text-sm font-semibold text-primary leading-relaxed mb-2">職場環境が「運命」を決める -- 全変数中で最大の格差</p>
         <p class="text-xs text-muted leading-relaxed">学習支援の有無がビジョン明確率に44ポイントの差を生む。支援なし環境ではビジョン明確率・スキル成長実感・社外通用自信の全てが0.0%という衝撃的結果となった。</p>
       </div>
@@ -412,19 +412,19 @@ body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
     <div class="pull-quote mb-8">
       <div class="w-divider bg-danger"></div>
       <p class="text-2xl sm:text-3xl font-black text-danger leading-snug">学習支援なし環境での<br>ビジョン明確率・スキル成長実感・社外通用自信<br>全て<span class="font-inter">0.0%</span></p>
-      <p class="text-xs text-muted mt-3">本調査における全変数中で最大の格差（44~47pt差）</p>
+      <p class="text-xs text-muted mt-3">本調査における全変数中で最大の格差（44~47pt差）<br>※「学習を推奨していない」群はn=17のため参考値。傾向として有意義だが、解釈には留意が必要</p>
     </div>
 
     <!-- Workplace Environment Grouped Bar Chart -->
     <div class="max-w-5xl mx-auto mb-12">
       <h3 class="text-sm font-semibold text-primary mb-1">学習支援環境別 4指標の比較</h3>
-      <p class="text-xs text-muted mb-4">n=341</p>
+      <p class="text-xs text-muted mb-4">n=341（※「推奨なし」群はn=17のため参考値）</p>
       <div id="chart-workplace-env" class="chart-box-lg"></div>
-      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）</p>
+      <p class="text-[10px] text-slate-400 mt-2">出典: 会計ファイナンス人材白書2026 経理財務人材調査（n=341）※「推奨なし」群はn=17</p>
     </div>
 
     <div class="narrative mb-12">
-      <p class="text-base leading-loose text-slate-600 mb-6">本調査で最も衝撃的な発見は、学習支援の有無がキャリア指標のほぼすべてを決定づけているという事実である。学習支援がある職場では、キャリアビジョンが明確な人が44.0%、スキル成長実感は46.6%、社内外で通用する自信を持つ人は38.8%に達する。一方、学習支援がない職場では、これらすべてが0.0%――文字通りゼロである。</p>
+      <p class="text-base leading-loose text-slate-600 mb-6">本調査で最も衝撃的な発見は、学習支援の有無がキャリア指標のほぼすべてを決定づけているという事実である。学習支援がある職場では、キャリアビジョンが明確な人が44.0%、スキル成長実感は46.6%、社内外で通用する自信を持つ人は38.8%に達する。一方、学習支援がない職場（n=17、参考値）では、これらすべてが0.0%となった。サンプルサイズが小さいため断定は避けるべきだが、傾向として極めて示唆的である。</p>
       <p class="text-base leading-loose text-slate-600 mb-6">この44~47ポイントの格差は、本調査における全変数中で最大である。性別よりも、年齢よりも、企業規模よりも、「職場が学習を支援しているか否か」が個人のキャリア形成を左右する。これは個人の意志や能力の問題ではなく、構造の問題だ。</p>
       <p class="text-base leading-loose text-slate-600">さらに注目すべきは、「推奨・支援なし」の職場では64.7%が「やりがいを感じていない」と回答している点だ。支援の欠如は、スキルだけでなく、仕事への意味づけそのものを奪う。</p>
     </div>
@@ -434,7 +434,7 @@ body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
       <div class="w-divider bg-slate-900"></div>
       <p class="font-inter text-6xl font-black text-primary leading-none">70.6<span class="text-2xl">%</span></p>
       <p class="text-base font-semibold text-slate-700 mt-4">学習支援なし環境の人材が<br>「過去3年間、何も行動していない」と回答</p>
-      <p class="text-xs text-muted mt-2">n=341</p>
+      <p class="text-xs text-muted mt-2">※「推奨なし」群 n=17のため参考値</p>
     </div>
 
     <div class="callout border-danger bg-red-50 mb-12">
@@ -1012,7 +1012,7 @@ body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="callout border-danger bg-red-50">
           <h4 class="text-sm font-bold text-primary mb-2">学習支援制度の整備</h4>
-          <p class="text-sm text-slate-600 leading-relaxed">学習支援なし環境の行動ゼロ率70.6%、やりがいなし64.7%。制度の有無がこれほどの差を生む以上、学習支援は最もROIの高い人的資本投資である。外部研修、資格取得支援、セミナー参加奨励などを制度化すべきだ。</p>
+          <p class="text-sm text-slate-600 leading-relaxed">学習支援なし環境（n=17、参考値）の行動ゼロ率70.6%、やりがいなし64.7%。制度の有無がこれほどの差を生む以上、学習支援は最もROIの高い人的資本投資である。外部研修、資格取得支援、セミナー参加奨励などを制度化すべきだ。</p>
         </div>
         <div class="callout border-accent bg-sky-50">
           <h4 class="text-sm font-bold text-primary mb-2">越境経験のジョブデザイン</h4>
